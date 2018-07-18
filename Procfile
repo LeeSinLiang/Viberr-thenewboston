@@ -1,0 +1,1 @@
+web: gunicorn django_tutourials_update123.wsgi --log-file -
