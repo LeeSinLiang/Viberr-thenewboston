@@ -11,10 +11,16 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import dj_database_url
+DATABASES = {
+    'default': dj_database_url.config(
+        default=dj_database_url.config('DATABASE_URL')
+    )
+}
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE_ROOT = os.path.dirname(__file__)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# SITE_ROOT = os.path.dirname(__file__)
 
 
 
@@ -22,10 +28,11 @@ SITE_ROOT = os.path.dirname(__file__)
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$6%@)h+2wi*aqut2a7acqn%%d!uxh6%xpwc%lxnb9z!un13imp'
-
+# SECRET_KEY = '$6%@)h+2wi*aqut2a7acqn%%d!uxh6%xpwc%lxnb9z!un13imp'
+SECRET_KEY = dj_database_url.config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = False
+DEBUG = dj_database_url.config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['viber888.herokuapp.com']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -76,12 +83,12 @@ WSGI_APPLICATION = 'django_tutourials_update123.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(SITE_ROOT, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 
 # Password validation
