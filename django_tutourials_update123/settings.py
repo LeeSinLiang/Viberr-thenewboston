@@ -31,8 +31,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECRET_KEY = '$6%@)h+2wi*aqut2a7acqn%%d!uxh6%xpwc%lxnb9z!un13imp'
 SECRET_KEY = dj_database_url.config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
-DEBUG = dj_database_url.config('DEBUG', default=False, cast=bool)
+DEBUG = False
 
 ALLOWED_HOSTS = ['viber888.herokuapp.com']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
