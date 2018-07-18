@@ -1,5 +1,8 @@
 from django.db import models
-from django.urls import reverse# Create your models here.
+from django.core.urlresolvers import reverse
+
+# Create your models here.
+
 class Album(models.Model):
     artist =  models.CharField(max_length=250)
     album_title = models.CharField(max_length=500)
