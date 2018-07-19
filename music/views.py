@@ -17,3 +17,5 @@ class DetailView(generic.DetailView):
 class AlbumCreate(CreateView):
     model = Album
     fields = ['artist' ,'album_title' , 'genre' , 'album_logo']
+    
+#awesome
